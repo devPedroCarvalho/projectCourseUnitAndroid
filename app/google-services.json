@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "774184402921",
+    "firebase_url": "https://wineappproject.firebaseio.com",
+    "project_id": "wineappproject",
+    "storage_bucket": "wineappproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774184402921:android:03ff0118b8659e8ef1d578",
+        "android_client_info": {
+          "package_name": "wineapp.java.wineappproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774184402921-1cesmhr0sl75t00krrr71cf92bh3m44g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgKQ_ymS5lhqQagOt9gOC4Z9niGHPR0P0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774184402921-1cesmhr0sl75t00krrr71cf92bh3m44g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

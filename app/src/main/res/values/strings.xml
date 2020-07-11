@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WineApp</string>
+
+    <!-- Login activity -->
+    <string name="login_name">Login</string>
+    <string name="txt_email">E-mail:</string>
+    <string name="hint_email">Digite seu e-mail…</string>
+    <string name="hint_password">Digite sua senha…</string>
+    <string name="txt_pass">Senha:</string>
+    <string name="txt_btn_enter">Entrar</string>
+
+    <!-- Register activity -->
+    <string name="txt_register_login">Ainda não se registrou?</string>
+    <string name="txt_registerAction_login">Registre-se!</string>
+    <string name="txt_btn_register">Registrar</string>
+    <string name="register_name">Registrar</string>
+
+
+    <!-- Home activity -->
+    <string name="btn_logout">Logout</string>
+    <string name="txt_home">Escolha um tipo de prato para saber os melhores vinhos…</string>
+</resources>
