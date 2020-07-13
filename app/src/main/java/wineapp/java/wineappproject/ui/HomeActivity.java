@@ -1,33 +1,30 @@
-package wineapp.java.wineappproject;
+package wineapp.java.wineappproject.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.google.firebase.auth.FirebaseAuth;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import wineapp.java.wineappproject.R;
 import wineapp.java.wineappproject.model.GetDataService;
 import wineapp.java.wineappproject.model.ModelWine;
 import wineapp.java.wineappproject.model.RetrofitClientInstance;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseClass {
 
     private Button btnLogout;
-    private FirebaseAuth user = FirebaseAuth.getInstance();
     private TextView firstWine;
     private TextView secondWine;
     private TextView thirdWine;
     private TextView textAboutWine;
 
-
+/*
+*terminar validações dos campos
+*acrescentar os tipos de comidas para fazer a requisição
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +49,11 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void logoutUser(){
-        user.signOut();
-        goToLoginActivity();
+        userAuth.signOut();
+        goToWithFinish(HomeActivity.this,LoginActivity.class);
     }
 
-    private void goToLoginActivity(){
-        Intent intent = new Intent(
-                HomeActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
     private void callAPI(String food){
         /*Create handle for the RetrofitInstance interface*/
