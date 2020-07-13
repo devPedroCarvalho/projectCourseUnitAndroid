@@ -27,10 +27,10 @@ public class SplashActivity extends BaseClass {
     private void verifyIfUserLogged(){
         if (userAuth.getCurrentUser() != null){
             goToWithFinish(SplashActivity.this, HomeActivity.class);
-            Log.d("TAG", "User logado");
+            //Log.d("TAG", "User logado");
         }else {
            goToWithFinish(SplashActivity.this, LoginActivity.class);
-            Log.d("TAG", "User nao logado");
+           // Log.d("TAG", "User nao logado");
         }
     }
 

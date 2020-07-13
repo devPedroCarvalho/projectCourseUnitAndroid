@@ -1,7 +1,6 @@
 package wineapp.java.wineappproject.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,11 +19,11 @@ public class HomeActivity extends BaseClass {
     private TextView secondWine;
     private TextView thirdWine;
     private TextView textAboutWine;
+    private TextView stew;
+    private TextView steak;
+    private TextView chilli;
+    private TextView burger;
 
-/*
-*terminar validações dos campos
-*acrescentar os tipos de comidas para fazer a requisição
-*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,46 @@ public class HomeActivity extends BaseClass {
         setContentView(R.layout.activity_home);
 
         btnLogout = findViewById(R.id.button_logout);
+        stew = findViewById(R.id.textView_stew_id);
+        steak = findViewById(R.id.textView_steak_id);
+        chilli = findViewById(R.id.textView_chili_id);
+        burger = findViewById(R.id.textView_burger_id);
+        firstWine = findViewById(R.id.textView_wine1_id);
+        secondWine =  findViewById(R.id.textView_wine2_id);
+        thirdWine = findViewById(R.id.textView_wine3_id);
+        textAboutWine = findViewById(R.id.textView_description);
+
+        stew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toastMessageShort(HomeActivity.this,"click!");
+                callAPI("stew");
+            }
+        });
+
+        steak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toastMessageShort(HomeActivity.this,"click!");
+                callAPI("steak");
+            }
+        });
+
+        chilli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toastMessageShort(HomeActivity.this,"click!");
+                callAPI("chilli");
+            }
+        });
+
+        burger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toastMessageShort(HomeActivity.this,"click!");
+                callAPI("burger");
+            }
+        });
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,10 +79,6 @@ public class HomeActivity extends BaseClass {
             }
         });
 
-        firstWine = findViewById(R.id.textView_wine1_id);
-        secondWine =  findViewById(R.id.textView_wine2_id);
-        thirdWine = findViewById(R.id.textView_wine3_id);
-        textAboutWine = findViewById(R.id.textView_description);
 
 
     }
@@ -59,7 +94,7 @@ public class HomeActivity extends BaseClass {
         /*Create handle for the RetrofitInstance interface*/
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
 
-        Call<ModelWine> call = service.getData("steak","e3d9c39a9b134ddabd2fb1faccb60865");
+        Call<ModelWine> call = service.getData(food,"e3d9c39a9b134ddabd2fb1faccb60865");
         call.enqueue(new Callback<ModelWine>() {
             @Override
             public void onResponse(Call<ModelWine> call, Response<ModelWine> response) {
@@ -78,7 +113,8 @@ public class HomeActivity extends BaseClass {
 
             @Override
             public void onFailure(Call<ModelWine> call, Throwable t) {
-                Log.d("TAG", "onFailure: " +t);
+                toastMessageShort(HomeActivity.this,"onFailure: " +t);
+                //Log.d("TAG", "onFailure: " +t);
 
             }
         });

@@ -19,12 +19,19 @@
     <!-- Home activity -->
     <string name="btn_logout">Logout</string>
     <string name="txt_home">Choose a type of dish to know the best wines …</string>
+    <string name="stew_text">Stew</string>
+    <string name="choose_text">Choose the type of food:</string>
+    <string name="steak_text">Steak</string>
+    <string name="chili_text">Chili</string>
+    <string name="burger_text">Burger</string>
+    <string name="wine_best_text">The best wines:</string>
 
     <!-- Toast message -->
     <string name="text_emptyEmail">ERROR!! Empty email!</string>
     <string name="text_CorrectEmail">ERROR!! Please enter a valid email!</string>
     <string name="text_emptyPassword">ERROR!! Password is required!</string>
     <string name="text_lengthPassword">ERROR!! Minimum length of password should be 6!</string>
+
 
 
 </resources>
